@@ -1,0 +1,62 @@
+<div *ngIf = "record" class="p-6 bg-gray-900 rounded-lg mt-4 text-xl tracking-wider">
+    <div class="card-container">
+    <div class="child">
+        <h5>Symptoms :-</h5>
+        <hr/>
+        <div *ngIf="record.Symptoms" class="subchild">
+            <p>Fainting: {{record.Symptoms.fainting}}</p>
+            <p>Heartbeat rate: {{record.Symptoms.heartBeatRate}}</p>
+            <p>Chest-tightness: {{record.Symptoms.ChestTightness}}</p>
+            <p>Chest-pain: {{record.Symptoms.ChestPain}}</p>
+            <p>Weight:  {{record.Symptoms.weight}}</p>
+        </div>
+    </div>
+    <div class="child">
+        <h5>Other probs :-</h5>
+        <hr/>
+        <div *ngIf="record" class="subchild text-center">
+            {{record.anyOtherProblem}}
+        </div>
+        <hr/>
+    </div>
+    <div class="child">
+        <h5>Blood-test :-</h5>
+        <hr/>
+        <div *ngIf="record.bloodtest" class="subchild">
+            <p>Wbc Count:   {{record.bloodtest.wbcCount}}</p>
+            <p>Rbc Count: {{record.bloodtest.rbcCount}}</p>
+            <p>Total cholestrol: {{record.bloodtest.totalCholestrol}}</p>
+            <p>Low Density Lipoprotien: {{record.bloodtest.totalCholestrol}}</p>
+            <p>High Density Lipoprotien: {{record.bloodtest.HighDensityLipo}}</p>
+            <p>Triglycerides: {{record.bloodtest.triglycerides}}</p>
+        </div>
+    </div>
+    <div class="child">
+        <h5>Medicines :-</h5>
+        <hr/>
+        <div *ngIf="record" class="subchild text-center">
+                {{record.medicines}}
+        </div>
+        <hr/>
+    </div>
+    <div class="child">
+        <h5>Status :-</h5>
+        <hr/>
+        <div *ngIf="record.util" class="subchild">
+            <p>nextAppointment: {{record.util.nextAppointment}} </p>   
+            <p>consultancyFees:  {{record.util.consultancyFees}}</p>    
+            <p>paymentDone:  {{record.util.paymentDone}}</p>    
+            <p>paymentMethod: {{record.util.paymentMethod}}</p>
+        </div>
+        <hr/>
+    </div>
+    <div class="child">
+        <h5>Patient feedback : </h5>
+        <hr/>
+        <div *ngIf="record" class="subchild text-center">
+                {{record.patientFeedback}}
+        </div>
+        <hr/>
+    </div>
+   </div> 
+</div>

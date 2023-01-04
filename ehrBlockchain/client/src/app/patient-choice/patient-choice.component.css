@@ -1,0 +1,62 @@
+.card-container{
+    max-width: 500px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 10px auto;
+	padding: 20px;
+	background: #6db4b2;
+	border-radius: 25px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+    
+
+}
+.card-container input[type="text"],
+.card-container input[type="password"],
+.card-container a {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,255);
+	border: none;
+	border-radius: 4px;
+    font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#000000;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+.card-container input[type="text"]:focus,
+.card-container input[type="password"]:focus{
+	background: #f4ffff;
+
+}
+.navbar{
+	
+	width : auto;
+}
+
+.nav-item a{
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+.nav-item a:hover {
+	background-color: #ddd;
+	color: black;
+  }
+  
+.nav-item a.active {
+	background-color: #4CAF50;
+	color: white;
+  }

@@ -1,0 +1,56 @@
+<nav class="bg-green-500 p-3">
+    <div class="flex justify-center flex-wrap">
+        <a [routerLink] = "['/doctorHome/doctorId']" class="btn-primary">
+          Return to Home
+        </a>
+        <a [routerLink]="['/patientLogin']" class="btn-primary">Login as Patient</a>
+    </div>
+  </nav>
+  <app-alert></app-alert>
+
+
+<div class="container mt-4 text-white flex justify-center">
+      <div class="flex flex-col justify-center align-middle p-16 max-w-xl rounded-md bg-green-500">
+        
+          <h2 class="flex-1 text-2xl text-center">Patient on-boarding form</h2>
+          <form [formGroup]="form" class="flex-1 text-center" #patientInformation (ngSubmit)="savePatient(patientInformation)">
+
+
+              <div class="flex justify-center">  
+                  <label for="patientId" class="block"> <span class="text-xl">Username :</span> 
+                  <input formControlName="patientId" class="form-control input-area ml-3" (blur)="checkUsername()" type="text" placeholder="A unique username">   
+                  </label>  
+          </div>
+          <div class="flex justify-center">  
+              <label for="patientFirstName" class="block"> <span class="text-xl">First name :</span> 
+              <input formControlName="patientFirstName" class="form-control input-area ml-3" type="text" placeholder="Enter First name as in MCI registry">   
+              </label>  
+      </div>
+
+      <div class="flex justify-center">  
+              <label for="patientLastName" class="block"> <span class="text-xl">Last name :</span> 
+              <input formControlName="patientLastName" class="form-control input-area ml-3" type="text" placeholder="Enter Last name as in MCI registry">   
+              </label>  
+      </div>
+
+
+      <div class="flex justify-center">  
+          <label for="emailId" class="block"> <span class="text-xl ml-3">Email :</span> 
+          <input formControlName="emailId" class="form-control input-area ml-10" type="email" placeholder="Enter valid email">   
+          </label>  
+      </div>
+      <button class="btn-primary" (click)="startSpin()" >Save</button>
+
+                  <ngx-spinner
+                  bdColor="rgba(51,51,51,0.8)"
+                  size="medium"
+                  color="#fff"
+                  type="square-jelly-box">
+                  <p style="font-size: 20px; color: black"><b>Loading...</b></p>          
+                 </ngx-spinner>
+
+          </form>
+         
+        
+      </div>
+</div>

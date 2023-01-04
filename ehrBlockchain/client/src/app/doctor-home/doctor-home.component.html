@@ -1,0 +1,54 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="square-jelly-box">
+  <p style="font-size: 20px; color: black"><b>Loading...</b></p>
+</ngx-spinner>
+
+<nav class="bg-green-500 p-3">
+  <div class="flex justify-evenly flex-wrap">
+    <a  (click)="startSpin1()" class="btn-primary cursor-pointer"> Onboard a patient</a>
+    <a (click)="startSpin2()" class="btn-primary cursor-pointer">New Patient Consultation</a>
+    <a  routerLink="/arPage" class="btn-primary cursor-pointer">AR View</a>
+    <a  (click)="logout()" class="btn-primary cursor-pointer">Logout</a>
+    <a  routerLink="/chooseChat" class="btn-primary cursor-pointer">Chat</a>
+
+
+  </div>
+</nav>
+<app-alert></app-alert>
+
+<div class="mt-4 text-white flex justify-center">
+  <div class="flex justify-center align-middle p-16 max-w-xl rounded-md bg-green-500 ml-4">
+    
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg flex-1 m-8">
+          <img class="w-full" src="../../assets/images/generic_doc_profile.jpg" alt="doctor profile photo">
+          <div class="px-6 py-4 text-center">
+            <div class="font-bold text-md mb-2">Username- <span class="text-2xl">{{doctorId}}</span> </div>
+          </div>
+          <p class="text-white text-center">
+              Designations :
+            </p>
+          <div class="px-6 py-4">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">MBBS</span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">MS Cardiology</span>
+            </div>
+        </div>
+
+      </div>
+    <div class="flex-1 text-center m-8 mt-0 w-64 bg-green-500 rounded-lg">
+      <div *ngIf="patientList.length==0; else consultingPatients">
+        <h2 class="text-2xl tracking-wider font-bold"> No patients consulting you yet.</h2>
+      </div>
+      <ng-template #consultingPatients>
+            <h4 class="text-2xl tracking-wider font-bold"> List of Patients:</h4>
+            <div class="mt-6" *ngFor="let patient of patientList; let i = index">
+                <a routerLink="/patientConsent/{{patient}}" class="btn-3d">
+                  {{patient}}
+                </a>
+                <div class="flex justify-center">
+                <hr class="mt-4 w-64">
+                </div>
+            </div>
+      </ng-template>
+    </div>
+
+  </div>

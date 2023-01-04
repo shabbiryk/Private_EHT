@@ -1,0 +1,33 @@
+.card{
+    height: 200px;
+    margin: 10px;
+    background-color: #aaabb8;
+    border-radius: 25px;
+}
+
+.card:hover{
+    font-size: 150%;
+    box-shadow: 2px 2px rgba(50,50,50,0.9);
+    cursor: pointer;
+}
+
+.card-img{
+    border-radius: 25px;
+}
+.card-img-overlay{
+    color: BLACK;
+    border-radius: 25px;
+}
+
+.card-img-overlay h2{
+    margin-top: 250px;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+#doc-login{
+    cursor: pointer;
+}
+#pat-login{
+    cursor: pointer;
+}

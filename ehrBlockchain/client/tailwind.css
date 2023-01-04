@@ -1,0 +1,132 @@
+@tailwind base;
+
+@tailwind components;
+
+.btn-primary{
+    @apply inline-block text-white border p-3 rounded-sm border-white shadow-md tracking-normal font-bold bg-green-600;
+}
+
+.btn-primary:focus{
+    @apply shadow-outline outline-none;
+}
+
+.btn-primary:hover{
+  @apply bg-green-700;
+}
+
+.btn-3d{
+  @apply bg-white text-green-500 font-bold py-2 px-4 border-b-4 border-green-900 rounded m-4 ;
+}
+
+.btn-3d:hover{
+  @apply border-green-800 shadow-lg;
+}
+
+
+.input-area{
+    @apply bg-white text-gray-800 border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal;
+}
+
+.input-area:focus{
+    @apply outline-none shadow-outline;
+}
+
+.form-element{
+  @apply mt-4 border-green-300 border-t-2 text-center text-xl flex flex-col;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  
+  .alert h4 {
+    margin-top: 0;
+    color: inherit;
+  }
+  
+  .alert .alert-link {
+    font-weight: bold;
+  }
+  
+  .alert > p,
+  .alert > ul {
+    margin-bottom: 0;
+  }
+  
+  .alert > p + p {
+    margin-top: 5px;
+  }
+  
+  .alert-dismissable,
+  .alert-dismissible {
+    padding-right: 35px;
+  }
+  
+  .alert-dismissable .close,
+  .alert-dismissible .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+  }
+  
+  .alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+  }
+  
+  .alert-success hr {
+    border-top-color: #c9e2b3;
+  }
+  
+  .alert-success .alert-link {
+    color: #2b542c;
+  }
+  
+  .alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+  }
+  
+  .alert-info hr {
+    border-top-color: #a6e1ec;
+  }
+  
+  .alert-info .alert-link {
+    color: #245269;
+  }
+  
+  .alert-warning {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+  }
+  
+  .alert-warning hr {
+    border-top-color: #f7e1b5;
+  }
+  
+  .alert-warning .alert-link {
+    color: #66512c;
+  }
+  
+  .alert-danger {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+  }
+  
+  .alert-danger hr {
+    border-top-color: #e4b9c0;
+  }
+  
+  .alert-danger .alert-link {
+    color: #843534;
+  }
+
+@tailwind utilities;

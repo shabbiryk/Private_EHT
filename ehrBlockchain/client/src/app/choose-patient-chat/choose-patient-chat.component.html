@@ -1,0 +1,19 @@
+<div class="flex justify-center items-center">
+    <div class="flex-1 text-center m-8 mt-0 w-64 bg-green-500 rounded-lg mt-6">
+        <div *ngIf="doctorList.length==0; else consultingDoctors">
+          <h2 class="text-2xl tracking-wider font-bold"> No doctors consulting you yet.</h2>
+        </div>
+        <ng-template #consultingDoctors>
+              <h4 class="text-2xl tracking-wider font-bold text-white">Choose doctor to chat with:</h4>
+              <div class="mt-6" *ngFor="let doctor of doctorList; let i = index">
+                  <a routerLink="/patientChat/{{doctor}}" class="btn-3d">
+                    {{doctor}} <span *ngIf="i==0">- *latest consultation</span>
+                  </a>
+                  
+                  <div class="flex justify-center">
+                  <hr class="mt-4 w-64">
+                  </div>
+              </div>
+        </ng-template>
+      </div>
+</div>

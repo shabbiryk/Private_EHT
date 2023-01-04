@@ -1,0 +1,104 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="square-jelly-box">
+  <p style="font-size: 20px; color: black"><b>Loading...</b></p>
+</ngx-spinner>
+
+<nav class="bg-green-500 p-3">
+  <div class="flex justify-evenly flex-wrap">
+    <a class="btn-primary cursor-pointer" (click)="activateHistory()"> History <span
+        class="sr-only">(current)</span></a>
+    <a class="btn-primary cursor-pointer" (click)="activateMyDoctors()">My Doctors</a>
+    <a class="btn-primary cursor-pointer" routerLink="/chooseDoctor">Chat</a>
+    <a class="btn-primary cursor-pointer" (click)="logout()">Logout</a>
+    
+  </div>
+</nav>
+<app-alert></app-alert>
+
+<div *ngIf="noPassword" class="container mt-4 text-white flex justify-center">
+  <div class="flex flex-col justify-center align-middle p-16 max-w-xl rounded-md bg-green-500">
+    <h2 class="flex-1 text-2xl text-center font-bold">Set Password</h2>
+
+    <form [formGroup]="form" class="flex-1 text-center flex-col" #patientInformation>
+
+      <div class="flex justify-center mt-4">
+        <label for="password" class="block"> <span class="text-xl">password</span>
+          <input formControlName="password" class="form-control input-area" type="password">
+        </label>
+      </div>
+      <div class="flex justify-center">
+        <button class="btn-primary py-2 px-4 mt-4 text-lg" (click)="setPassword()">Set Password</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<div class="container mt-4 text-white flex justify-center">
+  <div class="flex flex-col justify-center align-middle p-16 max-w-xl rounded-md bg-green-500" *ngIf="isHistoryActive">
+      <div *ngIf="records.length==0; else recordList">
+        <h2 class="flex-1 text-2xl text-center">You dont have any diagnosis records yet.</h2>
+      </div>
+      <ng-template #recordList class="flex-1 text-2xl text-center">
+        <div *ngFor="let record of records; let i = index">
+          <div class="card">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h2 class="text-2xl text-white text-center">Record {{i+1}}</h2>
+                </div>
+                <div class="flex justify-center">
+                  <div *ngIf="show[i]; else showbtn">
+                    <button class="btn-primary" (click)="hideRecord(i)">Hide Record</button>
+                  </div>
+                  <ng-template #showbtn>
+                    <button class="btn-primary" (click)="showRecord(i)">Show Record</button>
+                  </ng-template>
+                </div>
+
+              </div>
+
+              <div *ngIf="show[i]">
+                <app-history-detail [record]="record"></app-history-detail>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+  </div>
+</div>
+
+
+
+<div class="container mt-4 text-white flex justify-center" *ngIf="isMyDoctorsActive">
+  <div class="flex flex-col justify-center align-middle p-16 max-w-xl rounded-md bg-green-500">
+    <div *ngIf="doctorArr.length==0; else doctorList">
+      <h2 class="text-2xl text-white ">You havent consulted any doctor yet.</h2>
+    </div>
+    <ng-template #doctorList>
+      <div *ngFor="let doctor of doctorDetailsList; let i = index">
+        <div class="card">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h2 class="text-2xl text-center">{{doctor.doctorId}} <span *ngIf="i==0" class="text-sm inline-block pb-4">- latest consultation</span> </h2>
+              </div>
+              <div class="flex justify-center">
+                <div *ngIf="showDoctorBool[i];else showDoc">
+                  <button class="btn btn-primary" (click)="hideDoctor(i)">Hide Details</button>
+                </div>
+                <ng-template #showDoc>
+                  <button class="btn btn-primary" (click)="showDoctor(i)">Show More Details</button>
+                </ng-template>
+              </div>
+            </div>
+
+            <div *ngIf="showDoctorBool[i]">
+              <app-doctor-detail [doctor]="doctor"></app-doctor-detail>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

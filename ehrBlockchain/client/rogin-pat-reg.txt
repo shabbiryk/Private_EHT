@@ -1,0 +1,64 @@
+<!-- <div class="container-fluid">
+<div class="row align-items-center justify-content-center">
+    <div class = "col-6 text-center" style="margin-top: 100px; margin-bottom: 100px;">
+        <div class="card-container">
+            <div class="card text-black bg-light border-primary">
+                <h2>New Patient Onboarding</h2>
+                <form #userForm="ngForm" (ngSubmit)="sendData()"> 
+
+                     
+                    <div style="margin-bottom: 0px; display: inline;" class="form-group">
+                        <label  for="patientFirstName" >First name : </label>
+                        
+                        <input type="text" required #name="ngModel" name="patientFirstName" [class.is-invalid]="name.invalid && name.touched" class="form-control" [(ngModel)]="patient.patientFirstName">
+                    </div>
+                    <!--<small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>-->
+
+                    <div style="margin-bottom: 0px; display: inline;" class="form-group">
+                        <label  for="patientLastName" >Last name : </label>
+                        <input type="text" required #name="ngModel" name="patientLastName" [class.is-invalid]="name.invalid && name.touched" class="form-control" [(ngModel)]="patient.patientLastName">
+                    </div>
+
+                    <div style="margin-bottom: 0px; display: inline;" class="form-group">
+                        <label  for="patientId" >Patient ID : </label>
+                        <input type="text" required #name="ngModel" name="patientId" [class.is-invalid]="name.invalid && name.touched" class="form-control" [(ngModel)]="patient.patientId">
+                    </div>
+
+                    <div style="margin-bottom: 0px; display: inline;" class="form-group">
+                        <label  for="patientPassword" >Password : </label>
+                        <!--<input type="text" required #name="ngModel" name="userName" [class.is-invalid]="name.invalid && name.touched" class="form-control" [(ngModel)]="userModel.name"> -->
+                        <input type="text" required #name="ngModel" name="patientPassword" [class.is-invalid]="name.invalid && name.touched" class="form-control" [(ngModel)]="patient.patientPassword">
+                    </div>
+
+         
+                    
+
+                    <div style="margin-top:2%;margin-bottom: 0px;"  class="form-group">
+                    <label>Email : </label>
+                    <input type="email"  required #email="ngModel" name="email" [class.is-invalid]="email.invalid && email.touched" class="form-control" [(ngModel)]="userModel.email">
+                    </div>
+                <small class="text-danger" [class.d-none]="email.valid || email.untouched">Please enter a valid email</small>
+                    
+
+                    <div style="margin-bottom: 0px;margin-top:2%" class="form-group">
+                    <label>Phone : </label>
+                    <input type="tel" required #phone="ngModel" pattern="^\d{10}$" [class.is-invalid]="phone.invalid && phone.touched" name="phone" class="form-control" [(ngModel)]="userModel.phone">
+                    </div>
+                <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone is required and must be 10 digits</small>
+
+                    <div style="margin-top:2%;margin-bottom: 0px;" class="form-group">
+                    <label>Unique Id : </label>
+                    <input type="tel" required #uid="ngModel" [class.is-invalid]="uid.invalid && uid.touched" name="uid" class="form-control" [(ngModel)]="userModel.uid">
+                    </div> 
+                    <small class="text-danger" [class.d-none]="uid.valid || uid.untouched"></small>
+                
+                    <button [disabled]="userForm.form.invalid" style="margin:2%" class="btn btn-primary" type="submit">Submit </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div> -->

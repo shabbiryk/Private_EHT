@@ -1,0 +1,17 @@
+issue:-
+
+1. from doctor home back button takes to the login page. should be stopped. - atharva
+
+2. all the Ids have been replaced with usernames - query blockchain for presence
+
+3. spinners not working in doctor registration and patient registration. Add to all the components with request actions. - sameer
+
+4. creating a service to get the confirmation of logins and logouts https://stackoverflow.com/questions/50371582/angular-6-passing-messages-via-service-to-from-component-to-message-component - rogin
+
+5. updating doctor on ehr - entire flow - avinash
+
+6. ehr id generate - avinash
+
+echo "export SENDGRID_API_KEY='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'" > sendgrid.env
+echo "sendgrid.env" >> .gitignore
+source ./sendgrid.env

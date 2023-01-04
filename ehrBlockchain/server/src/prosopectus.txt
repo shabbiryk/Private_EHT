@@ -1,0 +1,9 @@
+putting every ehr on the world state
+
+putting every patient on the world state
+
+putting every doctor on the world state
+
+the patient body contains a key for an array of ehrs issued for him.
+
+one alternative - only one doctor can be registered from a system. Patients need to be registered at a different db

@@ -1,0 +1,51 @@
+<nav class="bg-green-500 p-3">
+  <div class="flex justify-evenly flex-wrap">
+    <a href="#responsive-header" [routerLink]="['/patientLogin']" class="btn-primary">
+      Login as Patient
+    </a>
+    <a href="#responsive-header" [routerLink]="['/doctorRegistration']" class="btn-primary">
+      Doctor Registration
+    </a>
+    <a href="#responsive-header" [routerLink]="['/homepage']" class="btn-primary">
+      Return to Home
+    </a>
+  </div>
+</nav>
+<app-alert></app-alert>
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="square-jelly-box">
+  <p style="font-size: 20px; color: black"><b>Loading...</b></p>
+</ngx-spinner>
+
+
+<div class="container mt-4 text-white flex justify-center">
+  <div class="flex flex-col justify-center align-middle p-8 max-w-xl rounded-md bg-green-500">
+    <h2 class="flex-1 text-2xl text-center"><b>Doctor Login</b></h2>
+
+    <form class="flex-1 text-center" [formGroup]="form" #doctorInformation (ngSubmit)="login()">
+
+      <div class="flex justify-center">
+        <div class="text-xl">
+          <label for="doctorId">Username : </label>
+          <input formControlName="doctorId" class="form-control input-area" type="text">
+        </div>
+      </div>
+
+  <div class="flex justify-center">
+    <div class="text-xl">
+      <label for="password"> Password : </label>
+      <input formControlName="password" class="form-control input-area" type="password">
+    </div>
+  </div>
+
+  <div class="row align-items-center justify-content-center" style="margin: 20px;">
+    <div class="col-md-offset-1 col-md-4">
+      <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="square-jelly-box">
+        <p style="font-size: 20px; color: black"><b>Loading...</b></p>
+      </ngx-spinner>
+      <button class="btn-primary px-8" (click)="startSpin()">Login</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>

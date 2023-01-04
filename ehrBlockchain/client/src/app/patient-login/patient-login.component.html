@@ -1,0 +1,40 @@
+
+<nav class="bg-green-500 p-3">
+  <div class="flex justify-center flex-wrap">
+      <a href="#responsive-header" [routerLink] = "['/doctorLogin']" class="btn-primary">
+        Login as Doctor
+      </a>
+      <a href="#responsive-header" [routerLink] = "['/homepage']" class="btn-primary">
+        Return to Home
+      </a>
+  </div>
+</nav>
+<app-alert></app-alert>
+<div class="container mt-4 text-white flex justify-center">
+          <div class="flex flex-col justify-center align-middle p-8 max-w-xl rounded-md bg-green-500">
+              <h2 class="flex-1 text-2xl text-center"><b>Patient Login</b></h2>  
+                <form class="flex-1 text-center" [formGroup]="form" #patientInformation (ngSubmit)="login(patientInformation)">  
+                  
+                  <div class="flex justify-center max-w-sm text-xl">  
+                        <label for="patientId">Patient ID :
+                        <input formControlName="patientId" class="form-control input-area" type="text">   
+                        </label>  
+                  </div>  
+                  
+                  <div class="row align-items-center justify-content-center" style="margin: 20px;">  
+                    <div class="col-md-offset-1 col-md-4">
+                        <ngx-spinner
+                        bdColor="rgba(51,51,51,0.8)"
+                        size="medium"
+                        color="#fff"
+                        type="square-jelly-box">
+                        <p style="font-size: 20px; color: black"><b>Loading...</b></p>
+                       </ngx-spinner>  
+                        <button class="btn-primary px-8" (click)="startSpin()">Login</button>  
+                    </div>  
+                  </div>
+                  
+                </form>
+                                
+  </div>
+</div>

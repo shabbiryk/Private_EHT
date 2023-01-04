@@ -1,0 +1,27 @@
+<div *ngIf="records.length==0" class="w-64">
+    <h2>There are no records to show!</h2>
+    </div>
+    <div *ngFor="let record of records; let i = index" class="border-b-4 border-green-200 mb-2 pb-1">
+        <div class="card">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h2 class="text-3xl font-bold text-center">Record {{i+1}}</h2>
+                    </div>
+                    <div class="flex justify-center">
+                            <div *ngIf="show[i]; else showbtn">
+                                <button class="btn-primary" (click)="hideRecord(i)">Hide Record</button>
+                            </div>
+                            <ng-template #showbtn>
+                                <button class="btn-primary" (click)="showRecord(i)">Show Record</button>
+                            </ng-template>
+                    </div>
+    
+                </div>
+                
+                <div *ngIf="show[i]">
+                    <app-history-detail [record]="record"></app-history-detail>
+                </div>
+            </div>
+        </div>
+    </div>

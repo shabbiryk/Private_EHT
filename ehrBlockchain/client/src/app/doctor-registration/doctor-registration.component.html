@@ -1,0 +1,66 @@
+<nav class="bg-green-500 p-3">
+        <div class="flex justify-center flex-wrap">
+            <a href="#responsive-header" [routerLink] = "['/doctorLogin']" class="btn-primary">
+              Login as Doctor
+            </a>
+            <a href="#responsive-header" [routerLink] = "['/homepage']" class="btn-primary">
+              Return to Home
+            </a>
+        </div>
+      </nav>
+      <app-alert></app-alert>
+
+<div class="container mt-4 text-white flex justify-center">
+            <div class="flex flex-col justify-center align-middle p-16 max-w-xl rounded-md bg-green-500">
+                
+                    <h2 class="flex-1 text-2xl text-center"><b>Doctor Registration form</b></h2>  
+                    
+                    <form [formGroup]="form" class="flex-1 text-center" #doctorInformation (ngSubmit)="saveDoctor(doctorInformation)">  
+                    
+                    <div class="flex justify-center">  
+                            <label for="doctorFirstName" class="block"> <span class="text-xl">First name :</span> 
+                            <input formControlName="doctorFirstName" class="form-control input-area ml-3" type="text" placeholder="Enter First name as in MCI registry">   
+                            </label>  
+                    </div>
+
+                    <div class="flex justify-center">  
+                            <label for="doctorLastName" class="block"> <span class="text-xl">Last name :</span> 
+                            <input formControlName="doctorLastName" class="form-control input-area ml-3" type="text" placeholder="Enter Last name as in MCI registry">   
+                            </label>  
+                    </div>
+                    
+
+                    <div class="flex justify-center">  
+                            <label for="doctorId" class="block"> <span class="text-xl">Username :</span> 
+                            <input formControlName="doctorId" class="form-control input-area ml-3" (blur)="checkUsername()" type="text" placeholder="A unique username">   
+                            </label>  
+                    </div>
+                    <div class="flex justify-center">  
+                            <label for="doctorPassword" class="block"> <span class="text-xl">Password :</span> 
+                            <input formControlName="doctorPassword" class="form-control input-area ml-3" type="password" placeholder="Enter your password">   
+                            </label>  
+                    </div>
+
+                    <div class="flex justify-center">  
+                            <label for="doctorRegNumber" class="block -ml-10"> <span class="text-xl">Registration No:</span> 
+                            <input formControlName="doctorRegNumber" class="form-control input-area ml-3" type="number" placeholder="Enter reg no. as in MCI registry">   
+                            </label>  
+                    </div>
+                    
+                    <div class="row justify-content-center align-items-center" style="margin: 10px;">  
+                        <div class="col-md-4">  
+                                <ngx-spinner
+                                bdColor="rgba(51,51,51,0.8)"
+                                size="medium"
+                                color="#fff"
+                                type="square-jelly-box">
+                                <p style="font-size: 20px; color: black"><b>Loading...</b></p>
+                                </ngx-spinner> 
+                            <button class="btn-primary px-8" (click)="startSpin()" >Save</button>  
+                              
+                        </div>  
+                    </div>  
+                    
+                    </form>
+            </div>
+</div>

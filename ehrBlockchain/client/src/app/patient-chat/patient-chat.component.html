@@ -1,0 +1,22 @@
+<div class="relative  mt-4">
+        <div #scrollMe class="chat-div flex flex-col" style="height:70vh;overflow-y:auto">
+        <div *ngIf="noMsg==true" class="text-center text-2xl text-gray-900">Please start your conversation</div>
+            <div *ngFor="let msg of msgList" class="w-64  shadow-md rounded-lg text-white mt-2" [ngClass]="{'self-start':msg.from=='doctor', 'self-end':msg.from=='patient'}">
+                <div *ngIf="msg.from=='patient'" class="py-2 px-3 bg-green-700 rounded-lg">
+                    <p>{{msg.message}}</p>
+                </div>
+                <div *ngIf="msg.from=='doctor'" class="py-2 px-3 bg-green-600 rounded-lg">
+                        {{msg.message}}
+                </div>
+            </div>
+            
+        </div>
+        <br><br>
+    <div class="relative mt-10">
+        <div id="input-div" [formGroup]="msgGroup" class="bottom-0 absolute flex w-full">
+            <input type="text" formControlName="message" class="input-area flex-1 shadow-lg" (keydown.enter)="sendMsg()" required>
+            <button [disabled]="msgGroup.invalid" class="inline-block btn-primary flex-initial px-4 text-2xl ml-2" (click)="sendMsg()">Send</button>
+        </div>
+    </div>
+
+    </div>

@@ -1,0 +1,104 @@
+/* .row{
+    min-height: 10rem;        
+    margin-top: 1rem;
+}
+.col{
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,0.5)
+}
+
+input {
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline;
+    
+}
+
+label {
+    
+    text-align: right;
+    clear: both;
+    margin-right:15px;
+    display: inline;
+}
+
+h2{
+    margin: 10px;
+} */
+
+
+.col{
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,0.5)
+}
+
+
+.card-container{
+    max-width: 500px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 10px auto;
+	padding: 20px;
+	background: #6db4b2;
+	border-radius: 25px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+    
+
+}
+.card-container input[type="text"],
+.card-container input[type="password"],
+.card-container a {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,255);
+	border: none;
+	border-radius: 4px;
+    font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#000000;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+.card-container input[type="text"]:focus,
+.card-container input[type="password"]:focus{
+	background: #f4ffff;
+
+}
+.navlink{
+    margin: 10px;
+    padding: 2px;
+}
+
+label {
+    /* Other styling... */
+    text-align: right;
+    clear: both;
+    margin-right:15px;
+    display: inline;
+}
+
+input {
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline;
+}
+
+a{
+    margin: 10px;
+}
+
+h2{
+    margin: 10px;
+}
