@@ -452,3 +452,22 @@ export class EhrContract extends Contract {
 
 
 }
+
+
+
+
+
+
+//  The smart contract written in TypeScript for a healthcare system on a blockchain network. The contract is implemented using the fabric-contract-api library, which is a set of classes and interfaces for building smart contracts on the Hyperledger Fabric blockchain platform.
+
+// The contract defines several functions that can be called by clients to interact with the blockchain.
+
+// The ehrExists, patientExists, and doctorExists functions are used to check if a specific EHR, patient, or doctor record exists on the blockchain. They take in a string argument in the form of a JSON object and use the getState function to retrieve the data from the blockchain. The functions then check if the retrieved data is not null and has a length greater than 0, returning a boolean indicating whether the record exists or not.
+
+// The getPatient and getDoctor functions are used to retrieve a specific patient or doctor record from the blockchain. They take in a string argument in the form of a JSON object and use the getState function to retrieve the data from the blockchain, then returning the data as a string.
+
+// The checkDoctorPassword, checkPatientPassword, patientHasPassword, and setPatientPassword functions are used to handle password related queries for patients and doctors. The checkDoctorPassword and checkPatientPassword functions check if the input password matches the password of a specific doctor or patient. The patientHasPassword function checks if a specific patient has a password set, and the setPatientPassword function sets the password for a specific patient.
+
+// The contract also includes several imported classes, such as Ehr, Doctor, Symptoms, Bloodtest, Utils, and Patient. These classes likely contain additional functionality and data related to the healthcare system.
+
+// The @Transaction and @Returns decorators are used to define the type of transaction the function is and what the function returns. @Transaction(false) means the function will not change the state of the ledger, whereas @Transaction() means the function will change the state of the ledger.
